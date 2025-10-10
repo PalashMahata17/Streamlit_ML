@@ -12,6 +12,7 @@ st.set_page_config(
 )
 
 # --- MODEL LOADING ---
+# Use a cache decorator to load the model only once
 @st.cache_resource
 def load_model():
     with open('food_waste_predictor.pkl', 'rb') as file:
@@ -23,9 +24,9 @@ model = load_model()
 # --- SIDEBAR CONTENT ---
 st.sidebar.title("About the App")
 st.sidebar.info(
-    "This application was built to predict food wastage at events, "
-    "helping businesses optimize food orders, reduce costs, and promote sustainability. "
-    "It uses an XGBoost regression model trained on event data."
+    "This application predicts food wastage at events to help businesses "
+    "optimize food orders, reduce costs, and promote sustainability. "
+    "It uses a trained XGBoost regression model."
 )
 st.sidebar.header("Created by Palash")
 
@@ -61,26 +62,3 @@ if st.button("✨ Predict Wastage", type="primary"):
             "guests_per_food": num_guests / quantity_food,
             "Event Type": event_type,
             "Type of Food": type_of_food,
-            "Storage Conditions": storage_conditions,
-            "Seasonality": seasonality
-        }
-        input_df = pd.DataFrame([input_data])
-        
-        # Make a prediction
-        prediction = model.predict(input_df)[0]
-        
-        # Display the prediction with flair
-        st.subheader("Prediction Result")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric(label="Predicted Food Wastage", value=f"{prediction:.2f} kg")
-        
-        with col2:
-            st.info(
-                f"For an event with **{num_guests} guests** and **{quantity_food} kg** of food, "
-                f"the model predicts approximately **{prediction:.2f} kg** of waste."
-            )
-            
-        st.success("Use this prediction to adjust your food orders and minimize waste!")
-    else:
-        st.error("Quantity of Food must be greater than zero.")
