@@ -62,3 +62,4 @@ if st.button("✨ Predict Wastage", type="primary"):
             "guests_per_food": num_guests / quantity_food,
             "Event Type": event_type,
             "Type of Food": type_of_food,
+        }
