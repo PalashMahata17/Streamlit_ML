@@ -30,3 +30,5 @@ By inputting key details about an event, users can get an instant prediction, en
 * `pandas` for data manipulation.
 * `XGBoost` for the final regression model.
 * `Streamlit` for building and deploying the interactive web app.
+
+# App link: https://foodwasteredist.streamlit.app/
