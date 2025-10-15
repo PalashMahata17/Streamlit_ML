@@ -18,8 +18,11 @@ By inputting key details about an event, users can get an instant prediction, en
 # Methodology & Tech Stack
 
 1.Exploratory Data Analysis (EDA):** The initial dataset was analyzed to understand correlations and patterns between features like guest count, food quantity, and waste.
+
 2.Feature Engineering:** New features such as `waste_ratio` and `guests_per_food` were created to improve model performance.
+
 3.Model Comparison:** Several regression models were trained and evaluated, including Linear Regression, Decision Tree, Random Forest, and Gradient Boosting.
+
 4.Final Model:** **XGBoost Regressor** was selected as the final model due to its superior performance, achieving an **R² of over 0.99** on the test set.
 
 **Key Libraries Used:**
