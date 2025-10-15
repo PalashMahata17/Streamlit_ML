@@ -1,4 +1,5 @@
 <img width="1337" height="934" alt="image" src="https://github.com/user-attachments/assets/e7120f63-8ae2-4621-8f7b-6189454de210" />
+
 # Project Overview :
 
 Food waste is a significant financial and environmental issue for the catering and hospitality industries. 
@@ -7,8 +8,11 @@ By inputting key details about an event, users can get an instant prediction, en
 
 # Key Features
 1.Interactive UI:** A user-friendly interface built with Streamlit to input event parameters.
+
 2.Real-time Predictions:** The app uses a trained **XGBoost Regressor** model to provide instant and accurate wastage predictions in kilograms.
+
 3.Comprehensive Inputs:** Allows users to specify details like the number of guests, quantity of food, event type, seasonality, and more.
+
 4.Data-Driven Insights:** Empowers businesses to reduce costs, minimize their environmental footprint, and operate more efficiently.
 
 # Methodology & Tech Stack
